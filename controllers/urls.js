@@ -1,6 +1,7 @@
 const Url = require('../models/Url');
 const utils = require('../utils/utils');
 
+// Save the validated long URL to the database and return the randomly generated short URL to the client
 async function uploadUrl(req, res) {
   const base = process.env.BASE;
   const { longUrl } = req.body;
@@ -33,6 +34,7 @@ async function uploadUrl(req, res) {
   }
 }
 
+// Redirect to the long URL saved in the database when the user clicks the short URL
 async function redirectUrl(req, res) {
   try {
     const url = await Url.findOne({ urlId: req.params.urlId });

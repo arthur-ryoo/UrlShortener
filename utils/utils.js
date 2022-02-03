@@ -1,3 +1,4 @@
+// Create random short URL
 function generateRandomUrl(length) {
   let url = '';
   let characters =
@@ -8,6 +9,7 @@ function generateRandomUrl(length) {
   return url;
 }
 
+// Validate long URL to check if it's properly formatted
 function validateUrl(url) {
   var pattern = new RegExp(
     '^(https?:\\/\\/)?' +

@@ -14,6 +14,7 @@ function UrlShortener() {
   const [shortUrl, setShortUrl] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
+  // Submit the long URL
   const handleSubmit = (event) => {
     event.preventDefault();
     getShortUrl();
@@ -21,6 +22,8 @@ function UrlShortener() {
     setIsLoading(!isLoading);
   };
 
+  // Make a POST request to get a randomly generated short URL
+  // Alert if the URL is not valid
   const getShortUrl = async () => {
     await urlShortener
       .post('short', {
@@ -39,6 +42,7 @@ function UrlShortener() {
       });
   };
 
+  // Disable the form button if the input is empty
   const isFormValid = () => {
     return url;
   };
