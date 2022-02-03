@@ -44,3 +44,18 @@ Start the client
 ```bash
   npm start
 ```
+
+## Algorithm Used for Generating the Random Short URL
+
+```javascript
+function generateRandomUrl(length) {
+  let url = '';
+  let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+  
+  for (let i = 0; i < length; i++) {
+    url += characters.charAt(Math.floor(Math.random() * characters.length));
+   }
+    
+   return url;
+}
+```
